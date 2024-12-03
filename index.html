@@ -6,13 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Chat App</title>
   <style>
-    body {
+    main {
       padding: 0;
       margin: 0;
-      display: flex;
+      display: none;
       justify-content: center;
     }
     
+    #userform{
+      display: flex;
+      justify-content: center;
+    }
+
     #message-container {
       width: 80%;
       max-width: 1200px;
@@ -43,7 +48,12 @@
     </style>
 </head>
 <body>
-  <input type="text" id="user-name">
+  
+    <div id="userform">
+        <input type="text" id="user-name">
+        <input type="button" id="submit" value="submit">
+    </div>
+  <main>
   <div id="message-container"></div>
   <form id="send-container">
     <input type="text" id="message-input">
@@ -51,5 +61,6 @@
   </form>
   <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
   <script defer src="script.js"></script>
+</main>
 </body>
 </html>

@@ -4,7 +4,15 @@ const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
 
 const username = document.getElementById('user-name')
-const name = username.value
+const submit = document.getElementById('submit')
+const userform = document.getElementById('userform')
+const main = document.querySelector('main')
+let uname = ""
+submit.addEventListener('click',function(event){
+  uname += username.value
+const name = uname
+userform.style.display = 'none'
+main.style.display = 'flex'
 appendMessage('You joined')
 socket.emit('new-user', name)
 
@@ -33,3 +41,5 @@ function appendMessage(message) {
   messageElement.innerText = message
   messageContainer.append(messageElement)
 }
+
+})
